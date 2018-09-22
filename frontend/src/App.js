@@ -24,16 +24,13 @@ class App extends Component {
   }
 
   render() {
+    const { forecast, loading } = this.state
     return (
       <Fragment>
         <Header />
         <Router>
-          <Overview
-            path="/"
-            forecast={this.state.forecast.currently}
-            loading={this.state.loading}
-          />
-          <LongTerm path="/week" />
+          <Overview path="/" forecast={forecast.currently} loading={loading} />
+          <LongTerm path="/longterm" />
           <Details path="/details/:id" />
           <NotFound default />
         </Router>

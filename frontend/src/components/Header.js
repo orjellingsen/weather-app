@@ -19,13 +19,10 @@ const Header = () => {
       <h1>Weather app</h1>
       <ul>
         <li>
-          <Link to="/">Home</Link>
+          <Link to="/">Overview</Link>
         </li>
         <li>
-          <Link to="/search">Search</Link>
-        </li>
-        <li>
-          <Link to="/details">Details</Link>
+          <Link to="/longterm">Long Term</Link>
         </li>
       </ul>
     </StyledHeader>
