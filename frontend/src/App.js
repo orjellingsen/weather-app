@@ -10,13 +10,17 @@ import LongTerm from './components/LongTerm'
 const NotFound = () => <div>Page Not Found</div>
 
 class App extends Component {
+  state = {
+    loading: true,
+    forecast: {},
+  }
+
   async componentDidMount() {
-    const forecast = await getForecast({
+    await getForecast({
       lat: 42.3601,
       lng: -71.0589,
       params: 'lang=no&exclude=minutely&units=si',
-    })
-    console.log(forecast)
+    }).then(forecast => this.setState({ forecast, loading: false }))
   }
 
   render() {
@@ -24,7 +28,11 @@ class App extends Component {
       <Fragment>
         <Header />
         <Router>
-          <Overview path="/" />
+          <Overview
+            path="/"
+            forecast={this.state.forecast.currently}
+            loading={this.state.loading}
+          />
           <LongTerm path="/week" />
           <Details path="/details/:id" />
           <NotFound default />

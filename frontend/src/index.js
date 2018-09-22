@@ -10,7 +10,6 @@ const theme = {
   black: '#323232',
 }
 
-// Global styles but theme- and update-able!
 const GlobalStyle = createGlobalStyle`
   html {
     background: ${p => p.theme.backgroundColor};
