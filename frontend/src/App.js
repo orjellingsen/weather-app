@@ -19,7 +19,7 @@ class App extends Component {
     await getForecast({
       lat: 42.3601,
       lng: -71.0589,
-      params: 'lang=no&exclude=minutely&units=si',
+      params: 'exclude=minutely&units=si',
     }).then(forecast => this.setState({ forecast, loading: false }))
   }
 

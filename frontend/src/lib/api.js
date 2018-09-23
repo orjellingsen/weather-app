@@ -7,6 +7,6 @@ const options = {
 
 export const getForecast = async ({ lat, lng, params }) => {
   const endpoint = `${endPoint}/${lat}/${lng}/${params}`
-  const { data } = await axios.get(endpoint, options)
+  const { data } = await axios.get(endpoint, options).catch(err => console.log(err))
   return data
 }
