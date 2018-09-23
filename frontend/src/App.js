@@ -13,23 +13,23 @@ class App extends Component {
   state = {
     loading: true,
     forecast: {},
+    geo: {},
   }
 
   async componentDidMount() {
     await getForecast({
-      lat: 42.3601,
-      lng: -71.0589,
+      address: 'Lerkerinden 13',
       params: 'exclude=minutely&units=si',
-    }).then(forecast => this.setState({ forecast, loading: false }))
+    }).then(({ forecast, geo }) => this.setState({ forecast, geo, loading: false }))
   }
 
   render() {
-    const { forecast, loading } = this.state
+    const { forecast, loading, geo } = this.state
     return (
       <Fragment>
         <Header />
         <Router>
-          <Overview path="/" forecast={forecast.currently} loading={loading} />
+          <Overview path="/" forecast={forecast.currently} geo={geo} loading={loading} />
           <LongTerm path="/longterm" />
           <Details path="/details/:id" />
           <NotFound default />
