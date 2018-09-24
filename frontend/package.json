@@ -5,6 +5,8 @@
   "dependencies": {
     "@reach/router": "^1.1.1",
     "axios": "^0.18.0",
+    "downshift": "^2.2.2",
+    "opencage-api-client": "^0.3.0",
     "react": "^16.5.0",
     "react-dom": "^16.5.0",
     "react-scripts": "1.1.5",
