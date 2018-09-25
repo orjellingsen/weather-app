@@ -16,10 +16,10 @@ const StyledHeader = styled.header`
 const Header = () => {
   return (
     <StyledHeader>
-      <h1>Weather app</h1>
+      <h1>Weather App</h1>
       <ul>
         <li>
-          <Link to="/">Overview</Link>
+          <Link to="/">Today</Link>
         </li>
         <li>
           <Link to="/longterm">Long Term</Link>

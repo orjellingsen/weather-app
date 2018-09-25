@@ -2,18 +2,22 @@ import React from 'react'
 import Downshift from 'downshift'
 import debounce from 'lodash.debounce'
 import opencage from 'opencage-api-client'
+import PropTypes from 'prop-types'
 
 import { OPENCAGE_KEY } from '../config'
-import { getForecast } from '../lib/api'
 import { DropDown, DropDownItem, SearchStyles } from './styles/DropDown'
 
-class AutoComplete extends React.Component {
+class SearchLocation extends React.Component {
+  static propTypes = {
+    getForecast: PropTypes.func.isRequired,
+  }
+
   state = {
     results: [],
     loading: false,
   }
 
-  onChange = debounce(async (e, client) => {
+  onChange = debounce(async e => {
     this.setState({ loading: true })
     const { results } = await opencage
       .geocode({ q: e.target.value, key: OPENCAGE_KEY })
@@ -67,4 +71,4 @@ class AutoComplete extends React.Component {
   }
 }
 
-export default AutoComplete
+export default SearchLocation

@@ -6,15 +6,26 @@ import App from './App'
 
 const theme = {
   fontFamily: 'Helvetica Neue',
-  backgroundColor: '#fff',
   black: '#323232',
+  lightGrey: '#eee',
 }
 
 const GlobalStyle = createGlobalStyle`
   html {
-    background: ${p => p.theme.backgroundColor};
     color: ${p => p.theme.black};
     font-family: ${p => p.theme.fontFamily};
+    box-sizing: border-box;
+    font-size: 10px;
+    background: ${p => p.theme.lightGrey};
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  body {
+    margin: 0;
+    padding: 0;
+    font-size: 1.5rem;
+    line-height: 2;
   }
 `
 

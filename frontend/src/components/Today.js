@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Overview = ({ forecast, loading, geo }) => {
+const Today = ({ forecast, loading, geo }) => {
   if (loading) return <p>Loading...</p>
   return (
     <div>
@@ -12,4 +12,4 @@ const Overview = ({ forecast, loading, geo }) => {
   )
 }
 
-export default Overview
+export default Today
