@@ -19,7 +19,7 @@ app.get('/forecastgeo/:address/:params', async ({ params: { address, params } },
   const { data } = await axios
     .get(`${uri}/${lat},${lng}${params && '?' + params}`)
     .catch(err => console.log(err.message))
-  res.json({ forecast: data, geo: results[0] })
+  res.json({ forecast: data, location: results[0] })
 })
 
 /* This endpoint takes in latitude, longitude and DarkSky params, and returns
@@ -31,4 +31,4 @@ app.get('/forecast/:lat/:lng/:params', async ({ params: { lat, lng, params } }, 
   res.json({ forecast: data })
 })
 
-app.listen(process.env.PORT, () => console.log(`Listening on http://localhost:${process.env.PORT}`))
+app.listen(4444, () => console.log(`Listening on http://localhost:4444`))

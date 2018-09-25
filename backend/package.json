@@ -1,12 +1,12 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "Proxy API for DarkSky",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
-  "author": "",
+  "author": "Ørjan Ellingsen",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.18.0",
