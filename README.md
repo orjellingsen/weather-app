@@ -27,3 +27,6 @@ valid parameters can be found in the DarkSky documentation and should be supplie
 * [Styled Components (v4)](https://www.styled-components.com/) for all styling
 * [Reach Router](https://reach.tech/router)
 * [Downshift](https://github.com/paypal/downshift)
+
+## Design specs
+[Here](https://xd.adobe.com/spec/fcdf9bde-fb36-4661-7e85-7c3d1d65b735-8aee/)
