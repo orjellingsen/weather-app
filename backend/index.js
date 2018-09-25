@@ -11,6 +11,8 @@ const app = express()
 app.use(cors())
 app.use(bodyParser.json())
 
+/* This endpoint takes in an address and DarkSky params, and returns forecast
+   and information about the location most likely to match the address */
 app.get('/forecastgeo/:address/:params', async ({ params: { address, params } }, res) => {
   const { results } = await opencage.geocode({ q: address }).catch(err => console.log(err.message))
   const { lat, lng } = results[0].geometry
@@ -20,6 +22,8 @@ app.get('/forecastgeo/:address/:params', async ({ params: { address, params } },
   res.json({ forecast: data, geo: results[0] })
 })
 
+/* This endpoint takes in latitude, longitude and DarkSky params, and returns
+   the forecast for the given coordinates */
 app.get('/forecast/:lat/:lng/:params', async ({ params: { lat, lng, params } }, res) => {
   const { data } = await axios
     .get(`${uri}/${lat},${lng}${params && '?' + params}`)
